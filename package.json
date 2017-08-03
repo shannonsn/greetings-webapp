@@ -1,0 +1,25 @@
+{
+  "name": "greetings-webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shannon",
+  "license": "ISC",
+  "dependencies": {
+    "body": "^5.1.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-flash": "git://github.com/RGBboy/express-flash.git",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.3",
+    "mongodb": "^2.2.27",
+    "mongoose": "^4.10.1",
+    "parser": "^0.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
