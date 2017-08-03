@@ -23,9 +23,9 @@ app.use(bodyParser.json());
 app.use(session({secret: 'keybaord cat', cookie: { maxAge: 60000 * 30}}))
 app.use(flash())
 
- app.get('/', greetings.index);
- app.get('/greetings', greetings.addOn);
- app.post('/greetings', greetings.add);
+ // app.get('/', greetings.index);
+ app.get('/', greetings.addOn);
+ app.post('/', greetings.add);
 
   const port = 3007;
 
