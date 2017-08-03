@@ -27,8 +27,8 @@ app.use(flash())
  app.get('/greetings', greetings.addOn);
  app.post('/greetings', greetings.add);
 
-  const port = app.set('port', (process.env.PORT || 3007));
+  const port = 3007;
 
-  app.listen(port, function(){
+  app.listen(process.env.PORT || port , function(){
     console.log('app listerning at:' + port);
   });
