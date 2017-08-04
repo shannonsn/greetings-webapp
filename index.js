@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(session({secret: 'keybaord cat', cookie: { maxAge: 60000 * 30}}))
 app.use(flash())
 
- // app.get('/', greetings.index);
+ // app.get('/', greetings.index)
  app.get('/', greetings.addOn);
  app.post('/', greetings.add);
 

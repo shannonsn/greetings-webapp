@@ -14,8 +14,8 @@ module.exports = function() {
     var add = function(req, res) {
         var newName = req.body.newName;
 
-        var foundName = nameList.find(function(currentSubject) {
-            return currentSubject === newName;
+        var foundName = nameList.find(function(currentName) {
+            return currentName === newName;
         });
         if (!newName) {
             req.flash('error', 'text field should not be blank')
