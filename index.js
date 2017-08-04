@@ -30,5 +30,5 @@ app.use(flash())
   const port = 3007;
 
   app.listen(process.env.PORT || port , function(){
-    console.log('app listerning at:' + port);
+    console.log('app super ready to go:' + port);
   });
