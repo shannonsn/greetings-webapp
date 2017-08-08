@@ -1,11 +1,16 @@
-<h1>Add Names</h1>
-<form class="" action="/" method="post">
-  <input type="text" name="newName" placeholder="type your name here ">
-  <input type="submit" name="" value="add">
+  <h1>Add Names</h1>
+  <br>
+  <hr>
   <br>
   <br>
-  <input id="english" type="radio" name="language" value="English"> English
-  <input id="espanol" type="radio" name="language" value="Espanol"> Espanol
-  <input id="dutch" type="radio" name="language" value="Dutch"> Dutch <br>
-</form>
-<h1>{{lang}}{{message}}{{name}}</h1>
+  <form class="" action="/" method="post">
+    <input type="text" name="newName" placeholder="Type your name here " required>
+    <input type="submit" name="" value="add">
+    <br>
+    <br>
+    <input id="english" type="radio" name="language" value="Hello" > English
+    <input id="espanol" type="radio" name="language" value="Hola"> Espanol
+    <input id="dutch" type="radio" name="language" value="Hallo"> Dutch <br>
+  </form>
+  <p>{{counter}}</p>
+  <h1>{{lang}}{{message}}{{name}}</h1>

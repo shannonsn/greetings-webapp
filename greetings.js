@@ -1,11 +1,11 @@
 module.exports = function() {
     var nameList = [];
 
-    var index = function(req, res) {
-        res.render('index', {
-            names: nameList
-        });
-    };
+    // var index = function(req, res) {
+    //     res.render('index', {
+    //         names: nameList
+    //     });
+    // };
     const addOn = function(req, res) {
         res.render('add');
 
@@ -13,7 +13,7 @@ module.exports = function() {
 
     var add = function(req, res) {
         var newName = req.body.newName;
-
+console.log(newName)
         var foundName = nameList.find(function(currentName) {
             return currentName === newName;
         });
@@ -26,23 +26,24 @@ module.exports = function() {
         }
 
           var language = req.body.language;
-
-        if (language === 'Dutch') {
-          res.render('add',{lang: 'Hallo, ', name: newName})
+console.log(language);
+        if (language === 'Hallo') {
+          res.render('add',{lang: 'Hallo, ' , name: newName})
         }
-        else if (language === 'English') {
+        else if (language === 'Hello') {
           res.render('add', {lang: 'Hello, ' , name: newName})
         }
-        else if (language === 'Espanol') {
+        else if (language === 'Hola') {
           res.render('add', {lang: 'Hola, ' , name: newName})
         }
         else{
-          res.render('add', {message: 'Please enter name or select a language!'})
+          res.render('add', {message: 'Please select a language!'})
         }
 
     }
+
     return {
-        index,
+
         add,
         addOn
     }
