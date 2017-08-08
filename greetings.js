@@ -1,5 +1,5 @@
+var nameList = [];
 module.exports = function() {
-    var nameList = [];
 
     // var index = function(req, res) {
     //     res.render('index', {

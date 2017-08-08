@@ -5,7 +5,16 @@ body{
   background-color: ;
 }
 h1{
+  text-align: center;
+  /*font-family: 'Saira', sans-serif;*/
+  /*font-family: 'Zilla Slab Highlight', cursive;*/
   color: purple;
   font-size: 35;
   /*text-align: center;*/
+}
+form{
+text-align: center;
+}
+#secondRule{
+  visibility: hidden;
 }
