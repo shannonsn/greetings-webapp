@@ -1,3 +1,5 @@
+
+
 var nameList = [];
 module.exports = function() {
 
@@ -13,7 +15,7 @@ module.exports = function() {
 
     var add = function(req, res) {
         var newName = req.body.newName;
-console.log(newName)
+// console.log(newName)
         var foundName = nameList.find(function(currentName) {
             return currentName === newName;
         });
@@ -26,7 +28,7 @@ console.log(newName)
         }
 
           var language = req.body.language;
-console.log(language);
+// console.log(language);
         if (language === 'Hallo') {
           res.render('add',{lang: 'Hallo, ' , name: newName})
         }

@@ -4,6 +4,10 @@
 body{
   background-color: ;
 }
+#header{
+  border: solid;
+  /*border-color: green;*/
+}
 h1{
   text-align: center;
   /*font-family: 'Saira', sans-serif;*/
@@ -15,6 +19,6 @@ h1{
 form{
 text-align: center;
 }
-#secondRule{
+.secondRule{
   visibility: hidden;
 }

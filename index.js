@@ -11,6 +11,9 @@ const session = require('express-session');
 
   const app = express();
 
+const connectdb = require('./models/connections');
+connectdb()
+
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
@@ -27,8 +30,8 @@ app.use(flash())
  app.get('/', greetings.addOn);
  app.post('/', greetings.add);
 
-  const port = 3007;
+  const port = process.env.PORT || 3007;
 
-  app.listen(process.env.PORT || port , function(){
+  app.listen(port , function(){
     console.log('app super ready to go:' + port);
   });
