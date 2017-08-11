@@ -5,11 +5,6 @@ var namesGreetedSchema = new mongoose.Schema({
   counter: Number
 });
 
-var name = mongoose.model('namesGreeted' , namesGreetedSchema)
+var names = mongoose.model('names' , namesGreetedSchema)
 
-module.exports = name;
-
-var x = new Name({
-  name: 'String',
-  counter: 'Number'
-})
+module.exports = names;

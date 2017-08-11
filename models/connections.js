@@ -1,7 +1,7 @@
 module.exports = function() {
     var mongoose = require('mongoose');
 
-    mongoose.connect('mongodb://localhost/names', {
+    mongoose.connect('mongodb://localhost/namesGreeted', {
         useMongoClient: true
     }, function(err) {
         if (err) {

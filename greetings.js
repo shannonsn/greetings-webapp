@@ -1,34 +1,26 @@
-
-
-var nameList = [];
 module.exports = function() {
+  var nameList = {};
+console.log(nameList)
+    var index = function (req, res) {
+        res.render('index', {
+        name: nameList
+        });
+    };
 
-    // var index = function(req, res) {
-    //     res.render('index', {
-    //         names: nameList
-    //     });
-    // };
     const addOn = function(req, res) {
         res.render('add');
+    };
 
-    }
+      var add = function(req, res) {
+  var newName = req.body.newName;
 
-    var add = function(req, res) {
-        var newName = req.body.newName;
-// console.log(newName)
-        var foundName = nameList.find(function(currentName) {
-            return currentName === newName;
-        });
-        if (!newName) {
-            req.flash('error', 'text field should not be blank')
-        } else {
-            if (!foundName) {
-                nameList.push(newName);
-            }
-        }
+      if (nameList[newName] === undefined){
+        nameList[newName] = 0
+      }
+      nameList[newName]++;
 
-          var language = req.body.language;
-// console.log(language);
+
+  var language = req.body.language
         if (language === 'Hallo') {
           res.render('add',{lang: 'Hallo, ' , name: newName})
         }
@@ -41,12 +33,10 @@ module.exports = function() {
         else{
           res.render('add', {message: 'Please select a language!'})
         }
-
-    }
-
-    return {
-
-        add,
-        addOn
-    }
 }
+        return {
+          index,
+          add,
+          addOn
+        }
+    };
