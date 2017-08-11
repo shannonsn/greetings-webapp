@@ -1,7 +1,7 @@
 module.exports = function() {
   var nameList = {};
-console.log(nameList)
     var index = function (req, res) {
+
         res.render('index', {
         name: nameList
         });
@@ -14,12 +14,12 @@ console.log(nameList)
       var add = function(req, res) {
   var newName = req.body.newName;
 
-      if (nameList[newName] === undefined){
-        nameList[newName] = 0
-      }
-      nameList[newName]++;
+  if (nameList[newName] === undefined) {
+   nameList[newName] = 0;
+}
+nameList[newName] += 1;
 
-
+console.log(nameList);
   var language = req.body.language
         if (language === 'Hallo') {
           res.render('add',{lang: 'Hallo, ' , name: newName})

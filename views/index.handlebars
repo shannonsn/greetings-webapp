@@ -1,17 +1,17 @@
 <h1>Greeted Names</h1>
-{{#if messages.error}}
+<!-- {{#if messages.error}}
 <div class="error">
   {{messages.error}}
   <br>
   <br>
 </div>
 
-{{/if}}
+{{/if}} -->
 <a href="/">greet me</a>
 
 
 <ul>
   {{#each name}}
-  <li>{{this}}</li>
+  <li>{{@key}} {{this}}</li>
   {{/each}}
 </ul>
