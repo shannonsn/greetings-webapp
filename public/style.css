@@ -1,24 +1,52 @@
-/*.error{
-  color: red;
-}*/
 body{
-  background-color: ;
-}
-#header{
-  border: solid;
-  /*border-color: green;*/
+  font-family: helvetica;
+  margin: 0;
+  background: url("http://media.istockphoto.com/photos/abstract-low-poly-background-picture-id546008844?k=6&m=546008844&s=612x612&w=0&h=RWDGhGSOmdBCjEnGyCfOzbbdfydltKKY4TDppHh5_Zk=") no-repeat;
+  background-size: cover;
 }
 h1{
   text-align: center;
-  /*font-family: 'Saira', sans-serif;*/
-  /*font-family: 'Zilla Slab Highlight', cursive;*/
-  color: purple;
+  color: white;
   font-size: 2.7em;
-  /*text-align: center;*/
+  font-family: 'Fredericka the Great', cursive;
+}
+h2{
+  height: 1.5em;
+  /*background-color: red;*/
+  text-align: center;
+  color: purple;
+  font-size: 2.8em
 }
 form{
 text-align: center;
 }
+#greetMeButton{
+  border-radius: 0.4em;
+  margin-left: 1em;
+}
+#peopleGreetedButton{
+  border-radius: 0.4em;
+}
 .secondRule{
   visibility: hidden;
+}
+div{
+    position :relative;
+    -webkit-animation: mymove 5s infinite;
+    animation: h1 5s infinite;
+}
+@keyframes h1 {
+  from {background-color: lightgrey;}
+   to {background-color: lightblue;}
+}
+.footer{
+  width: 100%;
+  background-color: rgba(255,255,255,0.5);
+  height: 5em;
+  /*text-align: center;*/
+  position: absolute;
+  bottom: 0;
+}
+h3{
+  font-size: 1.5em;
 }

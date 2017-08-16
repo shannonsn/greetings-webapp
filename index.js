@@ -7,12 +7,14 @@ const session = require('express-session');
 
  const Greetings = require('./greetings');
 
- const greetings = Greetings();
+ const connectdb = require('./models/connections');
+ connectdb()
+
+ const nameSchemaModel = require('./models/nameSchemaModel');
+
+ const greetings = Greetings(nameSchemaModel);
 
   const app = express();
-
-const connectdb = require('./models/connections');
-connectdb()
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');

@@ -5,6 +5,6 @@ var namesGreetedSchema = new mongoose.Schema({
   counter: Number
 });
 
-var names = mongoose.model('names' , namesGreetedSchema)
+const names = mongoose.model('names' , namesGreetedSchema)
 
 module.exports = names;
