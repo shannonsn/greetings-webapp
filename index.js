@@ -28,14 +28,19 @@ app.use(bodyParser.json());
 app.use(session({secret: 'keybaord cat', cookie: { maxAge: 60000 * 30}}))
 app.use(flash())
 
- app.get('/', greetings.addOn);
- app.post('/', greetings.add);
+ app.get('/greet', greetings.addOn);
+ app.post('/greet', greetings.add);
  app.get('/peopleGreeted', greetings.index)
 
  const mongoURL = process.env.MONGO_DB_URL || "'mongodb://localhost/namesGreeted'";
  mongoose.connect(mongoURL);
 
   const port = process.env.PORT || 3007;
+
+  app.use(function (err, req, res, next) {
+    console.error(err.stack)
+    res.status(500).send('Something broke!')
+  })
 
   app.listen(port , function(){
     console.log('app super ready to go:' + port);

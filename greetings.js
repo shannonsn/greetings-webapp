@@ -1,10 +1,11 @@
+var nameList = {};
 module.exports = function(nameSchemaModel) {
-    var nameList = {};
-    var index = function(req, res) {
+    var index = function(req, res, next) {
 
         nameSchemaModel.find({}, function(err) {
             if (err) {
                 console.log(err);
+                next(err);
             } else {
                 res.render('index', {
                     name: nameList
@@ -21,7 +22,7 @@ module.exports = function(nameSchemaModel) {
         var string = ','
         return lang + string
     }
-    var add = function(req, res) {
+    var add = function(req, res, next) {
         var newName = req.body.newName;
         var language = req.body.language;
 
@@ -34,6 +35,7 @@ module.exports = function(nameSchemaModel) {
             }, function(err) {
                 if (err) {
                     console.log(err);
+                    next(err);
                 } else {
                     res.render('add', {
                         name: newName,
@@ -53,6 +55,7 @@ module.exports = function(nameSchemaModel) {
             }, function(err) {
                 if (err) {
                     console.log(err);
+                    next(err)
                 } else {
                     res.render('add', {
                         name: newName,
