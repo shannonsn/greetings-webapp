@@ -7,7 +7,7 @@ const session = require('express-session');
 const mongoose = require('mongoose');
  const Greetings = require('./greetings');
 
- 
+
  // const connectdb = require('./models/connections');
  // connectdb()
 
@@ -29,6 +29,7 @@ app.use(bodyParser.json());
 app.use(session({secret: 'keybaord cat', cookie: { maxAge: 60000 * 30}}))
 app.use(flash())
 
+ app.get('/', function(req, res){res.redirect('/greet')})
  app.get('/greet', greetings.addOn);
  app.post('/greet', greetings.add);
  app.get('/peopleGreeted', greetings.index)
