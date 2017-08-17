@@ -1,7 +1,7 @@
 body{
   font-family: helvetica;
   margin: 0;
-  background: url("http://media.istockphoto.com/photos/abstract-low-poly-background-picture-id546008844?k=6&m=546008844&s=612x612&w=0&h=RWDGhGSOmdBCjEnGyCfOzbbdfydltKKY4TDppHh5_Zk=") no-repeat;
+  background: url("./images/background") no-repeat;
   background-size: cover;
 }
 h1{
