@@ -2,7 +2,6 @@ module.exports = function(nameSchemaModel) {
     var nameList = {};
     var index = function(req, res) {
 
-
         nameSchemaModel.find({}, function(err) {
             if (err) {
                 console.log(err);
@@ -42,7 +41,6 @@ module.exports = function(nameSchemaModel) {
                     });
                 }
             });
-            console.log("we made it");
 
         } else if (nameList[newName] !== undefined) {
             nameList[newName] += 1;

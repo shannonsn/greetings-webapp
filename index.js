@@ -4,7 +4,7 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const flash = require('express-flash');
 const session = require('express-session');
-
+const mongoose = require('mongoose');
  const Greetings = require('./greetings');
 
  const connectdb = require('./models/connections');
@@ -32,6 +32,8 @@ app.use(flash())
  app.post('/', greetings.add);
  app.get('/peopleGreeted', greetings.index)
 
+ const mongoURL = process.env.MONGO_DB_URL || "'mongodb://localhost/namesGreeted'";
+ mongoose.connect(mongoURL);
 
   const port = process.env.PORT || 3007;
 
