@@ -1,5 +1,5 @@
 module.exports = function(nameSchemaModel) {
-  var nameList = {};
+    var nameList = {};
     var index = function(req, res, next) {
 
         nameSchemaModel.find({}, function(err) {
@@ -22,17 +22,25 @@ module.exports = function(nameSchemaModel) {
         var string = ','
         return lang + string
     }
+
     var add = function(req, res, next) {
+
+        console.log("in add...");
+
         var newName = req.body.newName;
         var language = req.body.language;
 
-        if (nameList[newName] === undefined) {
-            nameList[newName] = 1;
+        console.log(newName);
+        console.log(language);
 
+        if (nameList[newName] === undefined) {
+            console.log("first time the name is found...");
+            nameList[newName] = 1;
             nameSchemaModel.create({
                 name: newName,
                 counter: 1
             }, function(err) {
+                console.log("###");
                 if (err) {
                     console.log(err);
                     next(err);
@@ -45,6 +53,9 @@ module.exports = function(nameSchemaModel) {
             });
 
         } else if (nameList[newName] !== undefined) {
+
+            console.log("name have been greeted again...");
+
             nameList[newName] += 1;
             nameSchemaModel.findOneAndUpdate({
                 name: newName
@@ -65,6 +76,7 @@ module.exports = function(nameSchemaModel) {
             });
         }
     }
+
     return {
         index,
         add,

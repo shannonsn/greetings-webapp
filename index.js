@@ -7,8 +7,9 @@ const session = require('express-session');
 const mongoose = require('mongoose');
  const Greetings = require('./greetings');
 
- const connectdb = require('./models/connections');
- connectdb()
+ 
+ // const connectdb = require('./models/connections');
+ // connectdb()
 
  const nameSchemaModel = require('./models/nameSchemaModel');
 
@@ -32,8 +33,6 @@ app.use(flash())
  app.post('/greet', greetings.add);
  app.get('/peopleGreeted', greetings.index)
 
- const mongoURL = process.env.MONGO_DB_URL || "'mongodb://localhost/namesGreeted'";
- mongoose.connect(mongoURL);
 
   const port = process.env.PORT || 3007;
 
