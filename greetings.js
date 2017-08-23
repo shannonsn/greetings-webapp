@@ -1,14 +1,15 @@
 module.exports = function(nameSchemaModel) {
     var nameList = {};
+
     var index = function(req, res, next) {
 
-        nameSchemaModel.find({}, function(err) {
+        nameSchemaModel.find({}, function(err, result) {
             if (err) {
                 console.log(err);
                 next(err);
             } else {
                 res.render('index', {
-                    name: nameList
+                    name: result
                 });
             }
         })

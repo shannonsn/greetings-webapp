@@ -5,11 +5,8 @@ const bodyParser = require('body-parser');
 const flash = require('express-flash');
 const session = require('express-session');
 const mongoose = require('mongoose');
+
  const Greetings = require('./greetings');
-
-
- // const connectdb = require('./models/connections');
- // connectdb()
 
  const nameSchemaModel = require('./models/nameSchemaModel');
 
@@ -29,10 +26,12 @@ app.use(bodyParser.json());
 app.use(session({secret: 'keybaord cat', cookie: { maxAge: 60000 * 30}}))
 app.use(flash())
 
+// redirect to greet
  app.get('/', function(req, res){res.redirect('/greet')})
+
  app.get('/greet', greetings.addOn);
  app.post('/greet', greetings.add);
- app.get('/peopleGreeted', greetings.index)
+ app.get('/peopleGreeted', greetings.index);
 
 
   const port = process.env.PORT || 3007;
